@@ -1,0 +1,47 @@
+package k;
+
+import javax.swing.*;
+
+public class hh {
+
+	public static void main(String[] args) {
+		String name, course;
+		double class_standing, quiz1, quiz2, lab1, lab2, exam,
+		ave_quiz, ave_lab, course_grade;
+		
+		name = JOptionPane.showInputDialog(null, "Enter Your Name");
+		course = JOptionPane.showInputDialog(null, "Enter Your Course");
+		
+		class_standing = Double.parseDouble(JOptionPane.showInputDialog(null, "Class Standing"));
+		quiz1 =  Double.parseDouble(JOptionPane.showInputDialog(null, "Quiz 1: "));
+		quiz2 =  Double.parseDouble(JOptionPane.showInputDialog(null, "Quiz 2: "));
+		lab1 =  Double.parseDouble(JOptionPane.showInputDialog(null, "Lab 1: "));
+		lab2 = Double.parseDouble(JOptionPane.showInputDialog(null, "Lab 2: "));
+		
+		exam = Double.parseDouble(JOptionPane.showInputDialog(null, "Exam: "));
+//		ave_quiz = Double.parseDouble(JOptionPane.showInputDialog(null, "Average Quiz: "));
+//		ave_lab = Double.parseDouble(JOptionPane.showInputDialog(null, "Average Laboratories: "));
+//		course_grade = Double.parseDouble(JOptionPane.showInputDialog(null, "Lab 2: "));
+		
+		ave_quiz = (quiz1 + quiz2) / 2;
+		ave_lab = (lab1 + lab2) / 2;
+		course_grade = (0.10 * class_standing) + (0.20 * ave_quiz) + (0.20 * ave_lab) + (0.50 * exam);
+		
+		String output = "Name: " + name + "\n" +
+				"Course: " + course + "\n" +
+				"Class Standing: " + class_standing + "\n" +
+//				"Class Standing: " + quiz1 + "\n" +
+//				"Class Standing: " + quiz2 + "\n" +
+//				"Class Standing: " + lab1 + "\n" +
+//				"Class Standing: " + lab2 + "\n" +
+				"Average Quiz: " + ave_quiz + "\n" +
+				"Average Laboratories: " + ave_lab + "\n" +
+				"Final Exam: " + exam + "\n" +
+				"Course Grade: " + course_grade + "\n"
+				;
+		
+		JOptionPane.showMessageDialog(null, output);
+	}
+
+}
+
